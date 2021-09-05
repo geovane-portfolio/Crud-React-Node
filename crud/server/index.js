@@ -7,7 +7,7 @@ const mysql = require('mysql');
 const db = mysql.createPool({
     host: 'localhost',
     user:'root',
-    password: '',
+    password: 'blog123',
     database: 'blog',
 });
 
@@ -48,7 +48,7 @@ app.post("/api/insert", (req, res) => {
 });
 
 // erro não deleta
-app.delete("/api/delete/:id", (req, res)=>{
+/*app.delete("/api/delete/:id", (req, res)=>{
     const id = req.params.id;
     const sqlDelete = "DELETE FROM noticias WHERE id = ?";
 
@@ -58,7 +58,7 @@ app.delete("/api/delete/:id", (req, res)=>{
         else
         console.log(err);
     })
-});
+});*/
 
 app.update("/api/update/:id", (req, res)=>{
     const id = req.body.id;
