@@ -33,9 +33,10 @@ function App() {
     
   };
   
+  /*
   const deleteNoticia = (id) => {
     Axios.delete(`http://localhost:3002/api/delete/${id}`);
-  };
+  };*/
 
   return (
     <div className="App">
@@ -80,12 +81,12 @@ function App() {
                 <fieldset className='noticias'>
 
                   <span className="id">{val.id}</span>
-                  <h3>{val.titulo}</h3>
+                  <h3>{val.titulo}t</h3>
                   <div className='autor'>Autor: {val.autor}</div>
-                  <p>{val.descricao}</p>
+                  <p>{val.descricao}d</p>
 
-                  {/* Botão deletar */}
-                  <button onClick={()=> {deleteNoticia(val.id)}}>Deletar</button>
+                  {/* Botão deletar 
+                  <button onClick={()=> {deleteNoticia(val.id)}}>Deletar</button> */}
                 </fieldset>
               </>
             );

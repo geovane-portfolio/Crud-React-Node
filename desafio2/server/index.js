@@ -8,7 +8,7 @@ const db = mysql.createPool({
     host: 'localhost',
     user:'root',
     password: '',
-    database: 'blog',
+    database: 'blog2',
 });
 
 app.use(cors());
@@ -18,10 +18,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get("/api/get", (req, res)=> {
     const sqlSelect = "SELECT * FROM noticias";
     db.query(sqlSelect, (err, result) => {
-        
-        console.log(err);
+
+        console.log(result);
     });
 });
+
 
 /*app.get("/api/get", (req, res)=> {
     let json = {error:'', result:{}};
@@ -33,6 +34,8 @@ app.get("/api/get", (req, res)=> {
         console.log(err);
     });
 });*/
+
+
 
 app.post("/api/insert", (req, res) => {
 
@@ -46,6 +49,8 @@ app.post("/api/insert", (req, res) => {
     })
     
 });
+
+/*
 
 // erro não deleta
 app.delete("/api/delete/:id", (req, res)=>{
@@ -76,7 +81,8 @@ app.update("/api/update/:id", (req, res)=>{
     })
 });
 
+*/
 
-app.listen(3001, () => {
-    console.log("porta 3001");
+app.listen(3002, () => {
+    console.log("porta 3002");
 });
